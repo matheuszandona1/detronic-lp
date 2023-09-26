@@ -332,6 +332,24 @@
 		.default__title {
 			color: $cor-primaria;
 		}
+		.close-btn {
+			position: absolute;
+			top: 25px;
+			right: 25px;
+			border: none;
+			background-color: transparent;
+			@include text;
+			color: $cor-primaria;
+			font-weight: bold;
+			border: 1px solid $cor-primaria;
+			border-radius: 50%;
+			padding: 10px;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 	.contact__form {
 		background-color: #f6f6f6;
@@ -721,6 +739,7 @@
 .switcher {
 	&__container {
 		display: flex;
+		justify-content: center;
 		@include media(s) {
 			flex-direction: column;
 		}
@@ -728,6 +747,8 @@
 	&__content {
 		padding: 80px 100px;
 		background-color: $cor-primaria-clara;
+		max-width: 50%;
+		width: 100%;
 		@include media(s) {
 			padding: 60px 24px;
 		}
@@ -798,11 +819,13 @@
 		}
 	}
 	&__side {
+		max-width: 50%;
+		width: 100%;
 		img {
-			height: 100%;
+			height: auto;
 			display: flex;
+			max-width: 100%;
 			width: 100%;
-			max-width: 50%;
 			@include media(s) {
 				max-width: unset;
 			}
@@ -812,6 +835,8 @@
 
 .testimonials {
 	padding: 80px 0px;
+	margin-top: -1px;
+	position: relative;
 	background: linear-gradient(80deg, #385fa5 0%, #5eb66f 100%);
 
 	@include media(s) {
