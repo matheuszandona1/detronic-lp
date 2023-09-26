@@ -98,6 +98,9 @@ input:valid + label {
 	@include s-border;
 	background: $cor-primaria;
 	display: inline-block;
+	&:hover {
+		color: #fff;
+	}
 	&.no-color {
 		background-color: transparent;
 		color: $cor-primaria;

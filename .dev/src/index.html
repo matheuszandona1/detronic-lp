@@ -5,6 +5,55 @@
 
 	<main>
 		<include src="./html//hero/hero-inv.html"></include>
+		<section class="simulador" id="simule">
+			<div class="simulador__container">
+				<div class="simulador__content">
+					<h2 class="default__title">Simule e descubra quanto você pode economizar:</h2>
+					<p class="default__desc">Insira o valor atual da sua conta de luz</p>
+					<form action="" class="simulador__form">
+						<div class="simulador__input">
+							<label for="calculo">
+								R$
+								<input type="text" id="numberInput" placeholder="130,00" value="130,00" />
+							</label>
+						</div>
+						<button type="submit" id="calculando">→</button>
+					</form>
+					<div class="simulador__infos">
+						<p class="default__desc second"><span>Valor mínimo:</span> R$130,00 | <span>APENAS CONTAS CEMIG</span></p>
+						<div class="simulador__toggle">
+							<div class="toggle" role="doc-subtitle">
+								<p class="active" id="residencia">🏠 RESIDÊNCIA</p>
+								<form>
+									<input type="checkbox" id="checkbox" value="residencia" />
+								</form>
+								<p id="empresa">🏢 EMPRESA</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="simulador__side">
+					<div class="simulador__bars">
+						<div class="bar" id="bar-1">
+							<p class="default__text">Mensal</p>
+							<p class="value">R$ <span id="value-monthly">00,00</span></p>
+							<div class="bar-size"></div>
+						</div>
+						<div class="bar" id="bar-2">
+							<p class="default__text">Em 1 ano</p>
+							<p class="value">R$ <span id="value-yearly">00,00</span></p>
+							<div class="bar-size" style="height: 80px"></div>
+						</div>
+						<div class="bar" id="bar-3">
+							<p class="default__text">Em 5 anos</p>
+							<p class="value">R$ <span id="value-five">00,00</span></p>
+							<div class="bar-size" style="height: 120px"></div>
+						</div>
+					</div>
+					<div class="button--container"><a href="#form-open" class="button full bigger">quero aderir</a></div>
+				</div>
+			</div>
+		</section>
 		<include src="./html/components/benefits.html"></include>
 		<include src="./html/components/resources.html"></include>
 		<section class="assine">
@@ -68,7 +117,58 @@
 				</div>
 			</div>
 		</section>
-		<!-- <include src="./html/components/contact.html"></include> -->
+		<section class="switcher">
+			<div class="switcher__container">
+				<div class="switcher__content">
+					<h2 class="default__title">AINDA DÁ PRA ECONOMIZAR <span>MAIS!</span></h2>
+					<div class="nav nav-tabs" id="nav-tab" role="tablist">
+						<button
+							class="nav-link active"
+							id="nav-year-tab"
+							data-bs-toggle="tab"
+							data-bs-target="#nav-year"
+							type="button"
+							role="tab"
+							aria-controls="nav-year"
+							aria-selected="false"
+						>
+							CLUBE CERTO
+						</button>
+						<button
+							class="nav-link"
+							id="nav-year1-tab"
+							data-bs-toggle="tab"
+							data-bs-target="#nav-year1"
+							type="button"
+							role="tab"
+							aria-controls="nav-year1"
+							aria-selected="false"
+						>
+							PROGRAMA DE INDICAÇÃO
+						</button>
+					</div>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="relatorios__resultado tab-pane fade show active" id="nav-year" role="tabpanel" aria-labelledby="nav-year-tab" tabindex="0">
+							<p class="default__text">
+								Quem assina o <b>Plano de Assinatura de Energia Solar Detronic </b>conta com benefícios exclusivos em mais de
+								<b> 600 mil produtos e serviços </b>por todo o Brasil. Conheça o <b>Clube Certo</b> — descontos e cashback em lojas, gastronomia, lazer,
+								esportes e mais!
+							</p>
+						</div>
+						<div class="relatorios__resultado tab-pane fade" id="nav-year1" role="tabpanel" aria-labelledby="nav-year1-tab" tabindex="0">
+							<p class="default__text">
+								Com o nosso Programa de Indicação, você pode zerar sua fatura Detronic. A cada amigo que realizar a adesão do nosso plano de assinatura de
+								energia solar, você ganha um desconto de R$25,00 na sua conta Detronic.
+							</p>
+						</div>
+					</div>
+					<h3 class="default__title">E aí, vamos começar a economizar de verdade?</h3>
+					<div class="button--container"><a href="#simule" class="button bigger">simule sua economia</a></div>
+				</div>
+				<div class="switcher__side"><img src="./assets/img-economizar.png" alt="" /></div>
+			</div>
+		</section>
+		<include src="./html/components/contact.html"></include>
 		<include src="./html/components/testimonials.html"></include>
 		<include src="./html/components/faq.html"></include>
 	</main>

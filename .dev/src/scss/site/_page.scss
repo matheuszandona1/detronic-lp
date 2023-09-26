@@ -113,6 +113,159 @@
 		margin-bottom: 32px;
 	}
 }
+.simulador {
+	margin-top: -80px;
+	position: relative;
+	&__container {
+		box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.04);
+		@include l-border;
+		display: flex;
+		@include container;
+	}
+	&__content {
+		background-color: #f6f6f6;
+		max-width: 770px;
+		width: 100%;
+		padding: 64px;
+		border-radius: 8px 0px 0px 8px;
+		.default__title {
+			margin-bottom: 24px;
+		}
+		.default__desc {
+			font-family: "Work Sans";
+			color: $neutro-700;
+			&.second {
+				color: $neutro-700;
+				margin-bottom: 32px;
+				span {
+					color: $cor-primaria;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	&__side {
+		background-color: #fff;
+		padding: 64px;
+		width: 100%;
+		max-width: 470px;
+		border-radius: 0px 8px 8px 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.button--container {
+			.button {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+	&__form {
+		display: flex;
+		margin-top: 32px;
+		margin-bottom: 24px;
+		button {
+			appearance: none;
+			background-color: #fff;
+			border: none;
+			font-size: 40px;
+			padding: 16px 24px 15px;
+		}
+	}
+	&__input {
+		margin-right: 16px;
+		padding-left: 16px;
+		padding-top: 8px;
+		max-width: 275px;
+		height: 77px;
+		background-color: #fff;
+		font-size: 40px;
+		input {
+			background-color: transparent;
+			border: none;
+			font-size: 40px;
+			padding: 0;
+			width: 200px;
+			color: $texto-legenda;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+	&__toggle {
+		.toggle {
+			display: flex;
+			align-items: center;
+			gap: 24px;
+			font-weight: bolder;
+			p {
+				@include text;
+				color: $neutro-700;
+				padding: 8px 16px;
+				border-radius: 4px;
+				background-color: $neutro-50;
+				transition: 0.2s ease-in all;
+			}
+			.active {
+				background-color: $cor-primaria;
+				color: $neutro-50;
+			}
+		}
+		/* HEADING INPUT CHECKBOX CUSTOM STYLES */
+		input[type="checkbox"] {
+			position: relative;
+			width: 80px;
+			border: none;
+			height: 40px;
+			appearance: none;
+			background: $neutro-50;
+			outline: none;
+			border-radius: 360px;
+			cursor: pointer;
+			@include l-shadow;
+		}
+
+		input[type="checkbox"]::before {
+			content: "";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+			top: 9px;
+			left: 10px;
+			background: $cor-primaria;
+			transform: scale(1.1);
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			transition: 0.5s;
+		}
+		input:checked[type="checkbox"]::before {
+			left: 50px;
+		}
+	}
+	&__bars {
+		display: flex;
+		gap: 24px;
+		align-items: end;
+		margin-bottom: 24px;
+		.default__text {
+			margin-bottom: 0px;
+			color: $cor-primaria;
+			@include text;
+		}
+		.value {
+			@include text;
+			font-weight: bold;
+			color: $cor-primaria;
+			margin-bottom: 8px;
+		}
+		.bar-size {
+			background-color: $cor-secundaria;
+			@include s-border;
+			height: 40px;
+			width: 98px;
+		}
+	}
+}
 .benefits {
 	padding: 80px 0px;
 	@include media(s) {
@@ -401,6 +554,76 @@
 		}
 	}
 }
+.switcher {
+	&__container {
+		display: flex;
+	}
+	&__content {
+		padding: 80px 100px;
+		background-color: $cor-primaria-clara;
+		.default__title {
+			margin-bottom: 24px;
+			&:first-child {
+				margin-bottom: 48px;
+				position: relative;
+			}
+			span {
+				position: relative;
+				&::after {
+					content: "";
+					width: 100%;
+					height: 4px;
+					background-color: $cor-primaria;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+				}
+			}
+		}
+		.nav-tabs {
+			border: none;
+			margin-bottom: 48px;
+		}
+		#nav-year-tab {
+			margin-right: 24px;
+		}
+		.nav-link {
+			@include text;
+			color: $cor-primaria;
+			background-color: transparent;
+			box-shadow: none;
+			border: none;
+			border-bottom: 2px solid $cor-primaria;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 700;
+			padding-bottom: 3px;
+			line-height: 150%;
+
+			&.active {
+				@include text;
+				color: $cor-primaria;
+				background-color: transparent;
+				box-shadow: none;
+				border: none;
+				border-bottom: 4px solid $cor-primaria;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 700;
+				padding-bottom: 3px;
+				line-height: 150%;
+			}
+		}
+		.relatorios__resultado {
+			color: $neutro-700;
+			font-family: "Work Sans";
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 150%;
+		}
+	}
+}
 
 .testimonials {
 	padding: 80px 0px;
@@ -421,9 +644,15 @@
 		}
 		.tag {
 			display: inline-block;
+			background-color: rgba(#ffff, $alpha: 0.16);
+			padding: 8px 20px;
+			&__text {
+				color: $neutro-50;
+			}
 		}
 		.default__title {
 			margin: 24px 0px;
+			color: $neutro-50;
 		}
 		.default__desc {
 			color: $texto-legenda;
@@ -438,16 +667,41 @@
 		gap: 24px;
 		margin-bottom: 48px;
 	}
+	&__text {
+		font-family: "Work Sans", sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 150%;
+		color: $cor-primaria;
+		margin-bottom: 0px;
+		&.second {
+			margin-bottom: 36px;
+		}
+	}
+	&__place {
+		font-family: "Work Sans", sans-serif;
+		color: $texto-legenda;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		margin-bottom: 24px;
+	}
 	&__card {
 		max-width: 397px;
+		height: 357px;
 		padding: 32px 40px;
 		@include s-border;
 		border: 1px solid #f6f6f6;
+		background-color: $neutro-50;
+		display: flex;
+		flex-direction: column;
 		@include l-shadow;
 		&--text {
 			@include text;
 			color: $texto-resources;
-			margin-bottom: 24px;
+			margin-bottom: auto;
 		}
 	}
 }
