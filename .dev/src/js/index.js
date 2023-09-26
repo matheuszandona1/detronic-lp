@@ -118,3 +118,8 @@ function atualizarValoresDesconto() {
 		console.error("valorFinalDescontoMensal não encontrado no localStorage.")
 	}
 }
+
+$("#form-open").on("click", function (e) {
+	$(this).parent().parent().parent().find(".contact__container")
+	$(".contact__container").slideToggle("fast").addClass("d-flex")
+})

@@ -50,8 +50,28 @@
 							<div class="bar-size" style="height: 120px"></div>
 						</div>
 					</div>
-					<div class="button--container"><a href="#form-open" class="button full bigger">quero aderir</a></div>
+					<div class="button--container"><a href="javascript:void(0)" id="form-open" class="button full bigger">quero aderir</a></div>
 				</div>
+			</div>
+			<div class="contact__container">
+				<h3 class="default__title">Faça agora sua adesão</h3>
+				<form action="" onsubmit="window.location.reload();" class="contact__form">
+					<div class="form-gap">
+						<div class="input_wrap">
+							<input type="text" required />
+							<label><img src="./assets/person.svg" alt="" /> Nome</label>
+						</div>
+						<div class="input_wrap">
+							<input type="tel" required />
+							<label><img src="./assets/phone.svg" alt="" /> Telefone</label>
+						</div>
+						<div class="input_wrap">
+							<input type="email" required />
+							<label><img src="./assets/mail.svg" alt="" /> E-mail</label>
+						</div>
+					</div>
+					<button type="submit" class="button">enviar formulário</button>
+				</form>
 			</div>
 		</section>
 		<include src="./html/components/benefits.html"></include>
@@ -168,7 +188,6 @@
 				<div class="switcher__side"><img src="./assets/img-economizar.png" alt="" /></div>
 			</div>
 		</section>
-		<include src="./html/components/contact.html"></include>
 		<include src="./html/components/testimonials.html"></include>
 		<include src="./html/components/faq.html"></include>
 	</main>

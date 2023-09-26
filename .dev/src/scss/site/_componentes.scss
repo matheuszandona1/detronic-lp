@@ -39,8 +39,8 @@
 }
 
 input {
-	border: 1px solid $texto-legenda;
 	@include s-border;
+	border: none;
 	padding: 16px;
 }
 

@@ -114,13 +114,13 @@
 	}
 }
 .simulador {
-	margin-top: -80px;
 	position: relative;
 	&__container {
 		box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.04);
 		@include l-border;
 		display: flex;
 		@include container;
+		margin-top: -80px;
 	}
 	&__content {
 		background-color: #f6f6f6;
@@ -264,6 +264,24 @@
 			height: 40px;
 			width: 98px;
 		}
+	}
+	.contact__container {
+		position: absolute;
+		display: none;
+		@include l-border;
+		background-color: #f6f6f6;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		height: 100%;
+		.default__title {
+			color: $cor-primaria;
+		}
+	}
+	.contact__form {
+		background-color: #f6f6f6;
+		padding-top: 0px;
 	}
 }
 .benefits {
@@ -706,7 +724,6 @@
 	}
 }
 .contact {
-	background-color: $cor-primaria;
 	padding: 80px 0px;
 	@include media(s) {
 		padding: 60px 0px;
@@ -743,8 +760,10 @@
 	&__form {
 		width: 100%;
 		display: flex;
-		gap: 16px;
+		gap: 48px;
+		flex-direction: column;
 		background-color: #fff;
+		justify-content: center;
 		padding: 64px;
 		flex-wrap: wrap;
 		@include media(s) {
@@ -752,13 +771,20 @@
 		}
 		.form-gap {
 			flex-wrap: wrap;
+			justify-content: center;
+			gap: 32px;
 		}
+
 		@include l-border;
 		input {
-			max-width: 300px;
+			width: 330px;
+			@include xl-shadow;
 		}
 		.button {
 			border: none;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 300px;
 			@include media(s) {
 				width: 100%;
 			}
@@ -852,15 +878,36 @@
 		flex-direction: column;
 		align-items: center;
 	}
-	&__logo {
-		max-width: 184px;
-		height: 44px;
-		background-color: #fff;
-		width: 100%;
+	&__links {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
 		margin-bottom: 24px;
-		img {
-			max-width: 100%;
-			height: auto;
+		p {
+			font-family: "Work Sans";
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 150%;
+			a {
+				color: $neutro-50;
+			}
+		}
+	}
+	&__socials {
+		display: flex;
+		gap: 24px;
+		margin-bottom: 24px;
+	}
+	&__logo {
+		margin-bottom: 24px;
+	}
+	&__end {
+		max-width: 310px;
+		text-align: center;
+		color: $neutro-50;
+		&:hover {
+			color: $neutro-50;
 		}
 	}
 }
