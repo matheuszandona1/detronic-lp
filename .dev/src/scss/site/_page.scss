@@ -121,6 +121,10 @@
 		display: flex;
 		@include container;
 		margin-top: -80px;
+		@include media(s) {
+			flex-direction: column;
+			padding: 0px 24px;
+		}
 	}
 	&__content {
 		background-color: #f6f6f6;
@@ -128,6 +132,10 @@
 		width: 100%;
 		padding: 64px;
 		border-radius: 8px 0px 0px 8px;
+		@include media(s) {
+			padding: 12px;
+			border-radius: 8px;
+		}
 		.default__title {
 			margin-bottom: 24px;
 		}
@@ -137,6 +145,9 @@
 			&.second {
 				color: $neutro-700;
 				margin-bottom: 32px;
+				@include media(s) {
+					font-size: 12px;
+				}
 				span {
 					color: $cor-primaria;
 					font-weight: bold;
@@ -153,6 +164,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		@include media(s) {
+			padding: 12px;
+		}
 		.button--container {
 			.button {
 				width: 100%;
@@ -170,6 +184,10 @@
 			border: none;
 			font-size: 40px;
 			padding: 16px 24px 15px;
+			@include media(s) {
+				font-size: 29px;
+				padding: 9px 24px 10px;
+			}
 		}
 	}
 	&__input {
@@ -180,6 +198,10 @@
 		height: 77px;
 		background-color: #fff;
 		font-size: 40px;
+		@include media(s) {
+			font-size: 29px;
+			height: 54px;
+		}
 		input {
 			background-color: transparent;
 			border: none;
@@ -187,6 +209,10 @@
 			padding: 0;
 			width: 200px;
 			color: $texto-legenda;
+			@include media(s) {
+				width: 120px;
+				font-size: 29px;
+			}
 			&:focus {
 				outline: none;
 			}
@@ -198,6 +224,22 @@
 			align-items: center;
 			gap: 24px;
 			font-weight: bolder;
+			flex-wrap: wrap;
+			@include media(s) {
+				justify-content: center;
+				#empresa {
+					order: 3;
+				}
+				#residencia {
+					order: 2;
+				}
+				form {
+					order: 1;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+				}
+			}
 			p {
 				@include text;
 				color: $neutro-700;
@@ -205,6 +247,9 @@
 				border-radius: 4px;
 				background-color: $neutro-50;
 				transition: 0.2s ease-in all;
+				@include media(s) {
+					font-size: 14px;
+				}
 			}
 			.active {
 				background-color: $cor-primaria;
@@ -251,18 +296,27 @@
 			margin-bottom: 0px;
 			color: $cor-primaria;
 			@include text;
+			@include media(s) {
+				font-size: 12px;
+			}
 		}
 		.value {
 			@include text;
 			font-weight: bold;
 			color: $cor-primaria;
 			margin-bottom: 8px;
+			@include media(s) {
+				font-size: 12px;
+			}
 		}
 		.bar-size {
 			background-color: $cor-secundaria;
 			@include s-border;
 			height: 40px;
 			width: 98px;
+			@include media(s) {
+				width: 80px;
+			}
 		}
 	}
 	.contact__container {
@@ -355,11 +409,16 @@
 		flex-direction: column;
 		@include media(s) {
 			padding: 0 24px;
+
+			height: 100%;
 		}
 	}
 	.default__title {
 		color: $neutro-50;
 		margin: 16px 0px;
+		@include media(s) {
+			text-align: left;
+		}
 	}
 	.default__desc {
 		@include general-title-smaller;
@@ -384,15 +443,24 @@
 .assine {
 	&__container {
 		display: flex;
+		@include media(s) {
+			flex-direction: column-reverse;
+		}
 		img {
 			height: 100%;
 			display: flex;
 			width: 100%;
 			max-width: 50%;
+			@include media(s) {
+				max-width: unset;
+			}
 		}
 	}
 	&__content {
 		padding: 60px 80px;
+		@include media(s) {
+			padding: 60px 24px;
+		}
 
 		.default__title {
 			margin-bottom: 48px;
@@ -406,6 +474,9 @@
 				height: 180px;
 				position: absolute;
 				left: 21px;
+				@include media(s) {
+					height: 120px;
+				}
 			}
 			&-number {
 				margin-right: 16px;
@@ -428,6 +499,9 @@
 					font-weight: bold;
 					color: $neutro-700;
 					max-width: 460px;
+					@include media(s) {
+						max-width: 260px;
+					}
 				}
 			}
 		}
@@ -440,20 +514,59 @@
 	margin-top: -2px;
 	&__container {
 		display: flex;
+		position: relative;
+		@include media(s) {
+			flex-direction: column;
+		}
+		&::after {
+			position: absolute;
+			content: "=";
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			border: 8px solid $cor-secundaria;
+			top: 50%;
+			font-size: 56px;
+			color: $neutro-50;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			background: linear-gradient(80deg, #385fa5 0%, #5eb66f 100%);
+			border-radius: 50%;
+			@include media(s) {
+				display: none;
+			}
+			z-index: 9;
+		}
 	}
+
 	&__content {
 		background-color: $cor-primaria;
 		color: $neutro-50;
 		max-width: 50%;
 		padding: 80px;
 		padding-bottom: 40px;
+		@include media(s) {
+			padding: 60px 0;
+		}
+		@include media(s) {
+			max-width: 100%;
+		}
 		.default__title {
 			color: $neutro-50;
 			margin-bottom: 48px;
+			@include media(s) {
+				text-align: left;
+				padding: 0px 24px;
+			}
 		}
 		.default__desc {
 			font-size: 29px;
 			margin-bottom: 48px;
+			@include media(s) {
+				font-size: 20px;
+				padding: 0px 24px;
+			}
 		}
 	}
 	&__paper {
@@ -461,6 +574,11 @@
 		gap: 40px;
 		position: relative;
 		max-width: 542px;
+
+		overflow: auto;
+		@include media(s) {
+			padding: 0px 24px;
+		}
 		&:after {
 			content: "+";
 			position: absolute;
@@ -478,6 +596,11 @@
 			right: 0;
 			margin: 0 auto;
 			background: linear-gradient(80deg, #385fa5 0%, #5eb66f 100%);
+			@include media(s) {
+				left: unset;
+				margin: unset;
+				right: 40px;
+			}
 		}
 	}
 	&__card {
@@ -493,22 +616,34 @@
 		max-width: 50%;
 		padding: 80px;
 		display: flex;
+
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
 		color: $neutro-50;
+		@include media(s) {
+			max-width: 100%;
+			padding: 60px 24px;
+		}
 		.default__title {
 			color: $neutro-50;
 			font-weight: 800;
 			font-size: 56px;
 			line-height: 64px;
+			@include media(s) {
+				font-size: 40px;
+				line-height: 48px;
+			}
 		}
 	}
 	&__bigger-text {
 		@include general-title;
 		font-size: 200px;
 		line-height: 100%;
+		@include media(s) {
+			font-size: 124px;
+		}
 	}
 	&__text {
 		background-color: #fff;
@@ -526,22 +661,33 @@
 }
 .economia {
 	padding: 80px;
+	@include media(s) {
+		padding: 60px 24px;
+	}
 	&__container {
 		@include container;
 		text-align: center;
+
 		.default__title {
 			margin-bottom: 24px;
+			@include media(s) {
+				text-align: left;
+			}
 		}
 		.default__desc {
 			max-width: 1029px;
 			margin: 0 auto;
 			margin-bottom: 48px;
 			color: $texto-legenda;
+			@include media(s) {
+				text-align: left;
+			}
 		}
 	}
 	&__content {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 		gap: 24px;
 	}
 	&__card {
@@ -575,12 +721,21 @@
 .switcher {
 	&__container {
 		display: flex;
+		@include media(s) {
+			flex-direction: column;
+		}
 	}
 	&__content {
 		padding: 80px 100px;
 		background-color: $cor-primaria-clara;
+		@include media(s) {
+			padding: 60px 24px;
+		}
 		.default__title {
 			margin-bottom: 24px;
+			@include media(s) {
+				text-align: left;
+			}
 			&:first-child {
 				margin-bottom: 48px;
 				position: relative;
@@ -601,6 +756,7 @@
 		.nav-tabs {
 			border: none;
 			margin-bottom: 48px;
+			flex-wrap: nowrap;
 		}
 		#nav-year-tab {
 			margin-right: 24px;
@@ -639,6 +795,17 @@
 			font-style: normal;
 			font-weight: 400;
 			line-height: 150%;
+		}
+	}
+	&__side {
+		img {
+			height: 100%;
+			display: flex;
+			width: 100%;
+			max-width: 50%;
+			@include media(s) {
+				max-width: unset;
+			}
 		}
 	}
 }
@@ -716,6 +883,9 @@
 		display: flex;
 		flex-direction: column;
 		@include l-shadow;
+		@include media(s) {
+			height: 100%;
+		}
 		&--text {
 			@include text;
 			color: $texto-resources;
@@ -767,7 +937,7 @@
 		padding: 64px;
 		flex-wrap: wrap;
 		@include media(s) {
-			padding: 32px;
+			padding: 0px;
 		}
 		.form-gap {
 			flex-wrap: wrap;
@@ -779,6 +949,9 @@
 		input {
 			width: 330px;
 			@include xl-shadow;
+			@include media(s) {
+				width: 300px;
+			}
 		}
 		.button {
 			border: none;
@@ -883,6 +1056,7 @@
 		gap: 16px;
 		justify-content: center;
 		margin-bottom: 24px;
+		flex-wrap: wrap;
 		p {
 			font-family: "Work Sans";
 			font-size: 12px;
